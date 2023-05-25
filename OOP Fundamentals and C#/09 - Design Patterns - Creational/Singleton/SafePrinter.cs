@@ -13,15 +13,18 @@
         {
             get
             {
-                lock (padlock)
+                if (_instance == null)
                 {
-                    if (_instance == null)
+                    lock (padlock)
                     {
-                        _instance = new SafePrinter();
+                        if (_instance == null)
+                        {
+                            _instance = new SafePrinter();
+                        }
                     }
-
-                    return _instance;
                 }
+
+                return _instance;
             }
             private set { }
         }
