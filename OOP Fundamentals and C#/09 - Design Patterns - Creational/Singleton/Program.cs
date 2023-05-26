@@ -35,10 +35,8 @@ static void TestMultipleThreadsSingleton()
     Parallel.ForEach(printerClients, new ParallelOptions { MaxDegreeOfParallelism = 5 }, printerClient =>
     {
         // Printer.Instance.Print(printerClient);
+        // StaticPrinter.Instance.Print(printerClient);
         SafePrinter.Instance.Print(printerClient);
     });
 }
-
-
-
 

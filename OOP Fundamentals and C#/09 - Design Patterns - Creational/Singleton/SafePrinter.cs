@@ -1,6 +1,6 @@
 ﻿namespace Singleton
 {
-    public class SafePrinter
+    public class SafePrinter : IPrinter
     {
         private static SafePrinter _instance;
         private static readonly object padlock = new object();

@@ -1,6 +1,6 @@
 ﻿namespace Singleton
 {
-    public class Printer
+    public class Printer : IPrinter
     {
         private static Printer _instance;
 
@@ -21,7 +21,6 @@
 
                 return _instance;
             }
-            private set { }
         }
 
         public void Print(string text)
